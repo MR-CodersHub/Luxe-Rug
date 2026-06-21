@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Read what private collectors and interior designers say about LuxeRug's premium custom washing and antique rug restorations. Verified client reviews.">
+  <title>Customer Reviews | LuxeRug Artisan Rug Cleaning & Restoration</title>
+  
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    /* Ratings Distribution styles */
+    .rating-summary-container {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 50px;
+      background-color: var(--surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 60px;
+      align-items: center;
+    }
+    .rating-score-box {
+      text-align: center;
+      border-right: 1px solid var(--border-color);
+      padding-right: 50px;
+    }
+    .big-score {
+      font-family: var(--font-heading);
+      font-size: 4.5rem;
+      font-weight: 500;
+      color: var(--text-heading);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .score-stars {
+      color: var(--accent-gold);
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    .score-count {
+      font-size: 0.9rem;
+      color: var(--text-body);
+    }
+    .distribution-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .distribution-row {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 0.88rem;
+    }
+    .star-label {
+      width: 60px;
+      font-weight: 500;
+      color: var(--text-heading);
+    }
+    .progress-bar-bg {
+      flex-grow: 1;
+      height: 10px;
+      background-color: var(--bg-color);
+      border-radius: var(--border-radius-full);
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background-color: var(--accent-gold);
+      border-radius: var(--border-radius-full);
+    }
+    .percentage-label {
+      width: 40px;
+      text-align: right;
+      font-weight: 500;
+      color: var(--text-heading);
+    }
+    
+    /* Grid layout for Reviews */
+    .reviews-grid-catalog {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+    .review-card-item {
+      background-color: var(--surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-md);
+      padding: 30px;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-normal);
+    }
+    .review-card-item:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+    .review-card-stars {
+      color: var(--accent-gold);
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+    .review-card-text {
+      font-size: 0.92rem;
+      line-height: 1.6;
+      color: var(--text-body);
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+    .review-card-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .review-card-avatar {
+      width: 45px;
+      height: 45px;
+      border-radius: var(--border-radius-full);
+      background-color: var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 500;
+      color: var(--primary-blue);
+      font-family: var(--font-heading);
+      border: 2px solid var(--accent-gold);
+    }
+    .review-author-info h4 {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-heading);
+      margin-bottom: 2px;
+    }
+    .review-author-info span {
+      font-size: 0.78rem;
+      color: var(--text-body);
+      display: block;
+    }
+    .review-rug-tag {
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--accent-gold);
+      text-transform: uppercase;
+      margin-top: 4px;
+      letter-spacing: 0.5px;
+    }
+    
+    @media (max-width: 991px) {
+      .rating-summary-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      .rating-score-box {
+        border-right: none;
+        padding-right: 0;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 30px;
+      }
+      .reviews-grid-catalog {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 767px) {
+      .reviews-grid-catalog {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Injected Sticky Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+  <!-- Inner Page Hero -->
+  <section class="inner-hero section-padding text-center" style="padding: 140px 0 80px 0; color: #FFFFFF; position: relative;">
+    <div class="container inner-hero-content scroll-reveal fade-up">
+      <h1 class="inner-hero-title">What Our Clients Say</h1>
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>Reviews</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Summary Statistics & Chart -->
+  <section class="reviews-stats-section section-padding">
+    <div class="container">
+      <div class="rating-summary-container scroll-reveal fade-up">
+        <div class="rating-score-box">
+          <div class="big-score">4.9</div>
+          <div class="score-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+          </div>
+          <div class="score-count">Based on 1,240 Verified Customer Reviews</div>
+        </div>
+        
+        <div class="distribution-list">
+          <!-- Row 5 -->
+          <div class="distribution-row">
+            <span class="star-label">5 Stars</span>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" style="width: 94%;"></div>
+            </div>
+            <span class="percentage-label">94%</span>
+          </div>
+          <!-- Row 4 -->
+          <div class="distribution-row">
+            <span class="star-label">4 Stars</span>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" style="width: 4%;"></div>
+            </div>
+            <span class="percentage-label">4%</span>
+          </div>
+          <!-- Row 3 -->
+          <div class="distribution-row">
+            <span class="star-label">3 Stars</span>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" style="width: 1.5%;"></div>
+            </div>
+            <span class="percentage-label">1.5%</span>
+          </div>
+          <!-- Row 2 -->
+          <div class="distribution-row">
+            <span class="star-label">2 Stars</span>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" style="width: 0.5%;"></div>
+            </div>
+            <span class="percentage-label">0.5%</span>
+          </div>
+          <!-- Row 1 -->
+          <div class="distribution-row">
+            <span class="star-label">1 Star</span>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" style="width: 0%;"></div>
+            </div>
+            <span class="percentage-label">0%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial Grid -->
+      <div class="reviews-grid-catalog">
+        <!-- Card 1 -->
+        <div class="review-card-item scroll-reveal fade-up">
+          <div class="review-card-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-card-text">
+            "We were ready to discard our antique Persian Heriz rug after severe pet urine damage, but LuxeRug saved it. The odor is completely gone and the colors are vibrant again. Outstanding artisan hand-washing!"
+          </p>
+          <div class="review-card-author">
+            <div class="review-card-avatar">EM</div>
+            <div class="review-author-info">
+              <h4>Eleanor Mercer</h4>
+              <span>Private Collector, Boston</span>
+              <div class="review-rug-tag">Antique Persian Heriz</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="review-card-item scroll-reveal fade-up" style="animation-delay: 0.05s;">
+          <div class="review-card-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-card-text">
+            "As an interior designer, I only trust LuxeRug with my clients' high-value silk carpets. They perform meticulous cleaning without color bleeding. The white-glove pickup and return service is incredibly convenient."
+          </p>
+          <div class="review-card-author">
+            <div class="review-card-avatar">JD</div>
+            <div class="review-author-info">
+              <h4>Jonathan Davies</h4>
+              <span>Principal Designer, JD Design</span>
+              <div class="review-rug-tag">Fine Silk Qum Rug</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="review-card-item scroll-reveal fade-up" style="animation-delay: 0.1s;">
+          <div class="review-card-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-card-text">
+            "They rebuilt the unraveling fringe on our family heirloom runner. The weave matches the rest of the rug so perfectly that you cannot even tell it was repaired. Highly professional and fully insured."
+          </p>
+          <div class="review-card-author">
+            <div class="review-card-avatar">CH</div>
+            <div class="review-author-info">
+              <h4>Clara Hughes</h4>
+              <span>Homeowner, Newton</span>
+              <div class="review-rug-tag">Restored Kilim Runner</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="review-card-item scroll-reveal fade-up">
+          <div class="review-card-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-card-text">
+            "Fabulous coffee stain correction on my light cream custom rug. I thought it was ruined forever, but they stripped the stains without altering the base fibers. Extremely satisfied with their organic treatments."
+          </p>
+          <div class="review-card-author">
+            <div class="review-card-avatar">RH</div>
+            <div class="review-author-info">
+              <h4>Robert Harrison</h4>
+              <span>Collector, Cambridge</span>
+              <div class="review-rug-tag">Custom Wool Area Rug</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="review-card-item scroll-reveal fade-up" style="animation-delay: 0.05s;">
+          <div class="review-card-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+          </div>
+          <p class="review-card-text">
+            "Prompt pickup, clear communication with the workshop, and returned looking brand new. They even provided photos of the pre-wash fiber audit. Will definitely continue using their services."
+          </p>
+          <div class="review-card-author">
+            <div class="review-card-avatar">SL</div>
+            <div class="review-author-info">
+              <h4>Sophia Laurent</h4>
+              <span>Homeowner, Brookline</span>
+              <div class="review-rug-tag">Turkish Oushak Rug</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="review-card-item scroll-reveal fade-up" style="animation-delay: 0.1s;">
+          <div class="review-card-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-card-text">
+            "They treated our vintage rug for moth larvae and did structural blocking to straighten the warped edges. The difference in the flatness of the pile is incredible. Absolute masters of their craft."
+          </p>
+          <div class="review-card-author">
+            <div class="review-card-avatar">MK</div>
+            <div class="review-author-info">
+              <h4>Michael Kovac</h4>
+              <span>Kovac Fine Arts</span>
+              <div class="review-rug-tag">Vintage Caucasian Rug</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Injected Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Shared & Custom JS Files -->
+  <script src="components.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

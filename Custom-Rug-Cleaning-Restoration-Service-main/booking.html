@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Book a luxury rug cleaning pickup online. Choose your service package, select a preferred collection window, and upload damage photos.">
+  <title>Book Pickup | LuxeRug Artisan Rug Cleaning & Restoration</title>
+  
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Scheduling Form Area -->
+  <section class="booking-section section-padding" style="background-color: rgba(var(--primary-blue-rgb), 0.01);">
+    <div class="container" style="max-width: 850px;">
+      <div class="booking-card-form scroll-reveal fade-up">
+        <div id="booking-form-wrapper">
+          <h3>Schedule Concierge Collection</h3>
+          <p>Complete the details below to request a complimentary home collection. Our operations team will call you to confirm the exact 2-hour arrival window.</p>
+          
+          <form id="pickup-booking-form" novalidate>
+            
+            <!-- Section 1: Client Information -->
+            <div class="form-section-card">
+              <h4 class="form-section-title"><span class="section-badge">01</span> Client & Location Details</h4>
+              
+              <!-- Name Field -->
+              <div class="form-group">
+                <label for="booking-name">Full Name <span class="required">*</span></label>
+                <input type="text" class="form-control" id="booking-name" placeholder="John Doe" required>
+                <span class="error-msg" id="name-error">Name must be at least 2 characters.</span>
+              </div>
+              
+              <!-- Contact Row -->
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="booking-email">Email Address <span class="required">*</span></label>
+                  <input type="email" class="form-control" id="booking-email" placeholder="john@example.com" required>
+                  <span class="error-msg" id="email-error">Please enter a valid email address.</span>
+                </div>
+                <div class="form-group">
+                  <label for="booking-phone">Phone Number <span class="required">*</span></label>
+                  <input type="tel" class="form-control" id="booking-phone" placeholder="(555) 000-0000" required>
+                  <span class="error-msg" id="phone-error">Please enter a valid phone number.</span>
+                </div>
+              </div>
+
+              <!-- Address Fields -->
+              <div class="form-group">
+                <label for="booking-street">Street Address <span class="required">*</span></label>
+                <input type="text" class="form-control" id="booking-street" placeholder="123 Luxury Ave" required>
+                <span class="error-msg" id="street-error">Please enter your collection street address.</span>
+              </div>
+              
+              <div class="form-row-3">
+                <div class="form-group">
+                  <label for="booking-suite">Apt / Suite <span class="optional">(Optional)</span></label>
+                  <input type="text" class="form-control" id="booking-suite" placeholder="Apt 4B">
+                </div>
+                <div class="form-group">
+                  <label for="booking-city">City <span class="required">*</span></label>
+                  <input type="text" class="form-control" id="booking-city" placeholder="Beverly Hills" required>
+                  <span class="error-msg" id="city-error">Please enter your city.</span>
+                </div>
+                <div class="form-group">
+                  <label for="booking-zip">ZIP Code <span class="required">*</span></label>
+                  <input type="text" class="form-control" id="booking-zip" placeholder="90210" required>
+                  <span class="error-msg" id="zip-error">Please enter a valid 5-digit ZIP code.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 2: Rug & Restoration Details -->
+            <div class="form-section-card">
+              <h4 class="form-section-title"><span class="section-badge">02</span> Heirloom & Service Details</h4>
+              
+              <!-- Specs & Dimensions Row -->
+              <div class="form-row-3">
+                <div class="form-group">
+                  <label for="booking-rug-type">Rug Type / Material <span class="required">*</span></label>
+                  <select class="form-control" id="booking-rug-type" required>
+                    <option value="">Select Rug Type...</option>
+                    <option value="wool">Artisan Wool Rug</option>
+                    <option value="persian">Persian & Oriental (Wool)</option>
+                    <option value="silk">Pure Silk Rug</option>
+                    <option value="kilim">Flatweave / Kilim</option>
+                    <option value="antique">Antique / Heritage Weave</option>
+                    <option value="synthetic">Modern Synthetic Pile</option>
+                    <option value="cotton">Natural Cotton Weave</option>
+                  </select>
+                  <span class="error-msg" id="type-error">Please select a rug type.</span>
+                </div>
+                <div class="form-group">
+                  <label for="booking-service">Service Tier <span class="required">*</span></label>
+                  <select class="form-control" id="booking-service" required>
+                    <option value="">Select Service Tier...</option>
+                    <option value="bronze">Bronze Wash (Standard Cleaning)</option>
+                    <option value="silver">Silver Restorative (Luxury Treatment)</option>
+                    <option value="gold">Gold Artisan Rebuild (Full Repair)</option>
+                  </select>
+                  <span class="error-msg" id="service-error">Please select a service.</span>
+                </div>
+                <div class="form-group">
+                  <label for="booking-size">Dimensions <span class="optional">(Optional)</span></label>
+                  <input type="text" class="form-control" id="booking-size" placeholder="e.g. 8x10 ft">
+                </div>
+              </div>
+
+              <!-- File Upload Drag Zone -->
+              <div class="form-group">
+                <label>Rug Image / Damage Photos <span class="optional">(Optional)</span></label>
+                <div class="file-upload-drag" id="drop-zone">
+                  <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+                  <p>Drag and drop your rug photos here, or click to browse</p>
+                  <span>Supports JPG, PNG up to 10MB</span>
+                  <input type="file" class="file-input-hidden" id="booking-file" accept="image/*">
+                </div>
+                <div class="upload-filename-preview" id="upload-preview"></div>
+              </div>
+            </div>
+
+            <!-- Section 3: Scheduling & Notes -->
+            <div class="form-section-card" style="margin-bottom: 30px;">
+              <h4 class="form-section-title"><span class="section-badge">03</span> Concierge Schedule & Care</h4>
+              
+              <!-- Time & Date Row -->
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="booking-date">Preferred Pickup Date <span class="required">*</span></label>
+                  <input type="date" class="form-control" id="booking-date" required>
+                  <span class="error-msg" id="date-error">Please pick a future pickup date.</span>
+                </div>
+                <div class="form-group">
+                  <label for="booking-time-slot">Preferred Time Slot <span class="required">*</span></label>
+                  <select class="form-control" id="booking-time-slot" required>
+                    <option value="">Select Time Slot...</option>
+                    <option value="morning">Morning (8:00 AM - 12:00 PM)</option>
+                    <option value="afternoon">Afternoon (12:00 PM - 4:00 PM)</option>
+                    <option value="evening">Evening (4:00 PM - 8:00 PM)</option>
+                  </select>
+                  <span class="error-msg" id="time-slot-error">Please select a preferred time slot.</span>
+                </div>
+              </div>
+
+
+
+              <!-- Special Notes -->
+              <div class="form-group">
+                <label for="booking-notes">Special Care Instructions <span class="optional">(Optional)</span></label>
+                <textarea class="form-control" id="booking-notes" rows="4" placeholder="Mention any heavy staining (wine, coffee), pet issues, color bleeding concerns, or specific structural damage that needs weavers' attention..."></textarea>
+              </div>
+            </div>
+
+            <!-- Dynamic Cost Summary (Updated in JS) -->
+            <div class="booking-summary-box" id="booking-summary-box" style="display: none;">
+              <h4>Service Cost Summary</h4>
+              <div class="summary-list">
+                <div class="summary-row">
+                  <span>Estimated Rug Service:</span>
+                  <span id="booking-base-price">$0.00</span>
+                </div>
+                <div class="summary-row total-row">
+                  <span>Estimated Total:</span>
+                  <span id="booking-total-price">$0.00</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action Button -->
+            <button type="submit" class="btn btn-accent btn-block" style="margin-top: 10px;" id="booking-submit-trigger">
+              <span class="btn-text">Verify & Schedule Pickup</span>
+              <span class="loader-spinner"><i class="fa-solid fa-spinner fa-spin" style="margin-right: 10px;"></i> Submitting Booking...</span>
+            </button>
+
+          </form>
+        </div>
+
+        <!-- Success Screen Overlay Structure -->
+        <div id="booking-success-wrapper" style="display: none; text-align: center; padding: 30px 10px;">
+          <div class="success-checkmark-wrapper">
+            <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+              <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+              <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+            </svg>
+          </div>
+          
+          <h3 style="font-family: var(--font-heading); font-size: 1.8rem; color: var(--text-heading); margin-bottom: 8px;">Concierge Pickup Scheduled</h3>
+          <p class="max-w-600" style="margin-bottom: 30px; font-size: 0.95rem; margin-left: auto; margin-right: auto;">Thank you. Your white-glove pickup has been logged into our artisan schedule. A rug care coordinator will call you within 2 business hours to confirm your arrival window.</p>
+          
+          <div style="background-color: rgba(var(--primary-blue-rgb), 0.015); border: 1px solid var(--border-color); border-radius: var(--border-radius-md); padding: 24px; max-width: 550px; margin: 0 auto 35px auto; text-align: left;">
+            <h4 style="font-family: var(--font-accent); font-size: 0.85rem; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; text-align: center;">Artisan Tracking Certificate</h4>
+            <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.9rem;">
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--text-body);">Client Name:</span>
+                <strong id="success-client-name" style="color: var(--text-heading);">-</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--text-body);">Pickup Date & Slot:</span>
+                <strong id="success-pickup-time" style="color: var(--text-heading);">-</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--text-body);">Collection Address:</span>
+                <strong id="success-client-address" style="color: var(--text-heading); text-align: right;">-</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; border-top: 1px dashed var(--border-color); padding-top: 10px; font-size: 1rem;">
+                <span style="color: var(--text-body); font-weight: 500;">Journey Tracking ID:</span>
+                <strong id="success-tracking-id" style="color: var(--accent-gold); font-family: monospace; letter-spacing: 0.5px;">LUX-XXXX-WASH</strong>
+              </div>
+            </div>
+          </div>
+          
+          <button type="button" class="btn btn-outline-gold" id="success-track-btn">
+            <i class="fa-solid fa-satellite-dish"></i> Track Rug Journey Now
+          </button>
+        </div>
+      </div>
+
+      <!-- Service Tier Details -->
+      <div class="scroll-reveal fade-up" style="margin-top: 60px;">
+        <div class="text-center" style="margin-bottom: 40px;">
+          <span class="section-subtitle">Choose Your Care Tier</span>
+          <h3 class="section-title">Service Packages</h3>
+        </div>
+        <div class="booking-service-grid">
+          <div class="glass-card-premium" style="padding: 35px 25px; text-align: center;">
+            <div style="font-size: 2rem; color: var(--accent-gold); margin-bottom: 15px;"><i class="fa-solid fa-hand-sparkles"></i></div>
+            <h4 style="font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 8px;">Bronze Wash</h4>
+            <p style="font-size: 0.85rem; color: var(--text-body); margin-bottom: 15px;">Standard deep cleaning for regular maintenance. Includes dusting, organic pool wash, and flat drying.</p>
+            <div style="font-size: 0.8rem; color: var(--text-muted); border-top: 1px solid var(--border-color); padding-top: 12px;">
+              <div>From <strong style="color: var(--accent-gold);">$4.00/sq ft</strong></div>
+              <div>5-7 Day turnaround</div>
+            </div>
+          </div>
+          <div class="glass-card-premium" style="padding: 35px 25px; text-align: center; border-color: var(--accent-gold);">
+            <div style="font-size: 2rem; color: var(--accent-gold); margin-bottom: 15px;"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+            <h4 style="font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 8px;">Silver Restorative</h4>
+            <p style="font-size: 0.85rem; color: var(--text-body); margin-bottom: 15px;">Luxury treatment for delicate rugs. Adds stain neutralization, color-safe wash, and fringe conditioning.</p>
+            <div style="font-size: 0.8rem; color: var(--text-muted); border-top: 1px solid var(--border-color); padding-top: 12px;">
+              <div>From <strong style="color: var(--accent-gold);">$6.50/sq ft</strong></div>
+              <div>7-10 Day turnaround</div>
+            </div>
+          </div>
+          <div class="glass-card-premium" style="padding: 35px 25px; text-align: center;">
+            <div style="font-size: 2rem; color: var(--accent-gold); margin-bottom: 15px;"><i class="fa-solid fa-award"></i></div>
+            <h4 style="font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 8px;">Gold Artisan Rebuild</h4>
+            <p style="font-size: 0.85rem; color: var(--text-body); margin-bottom: 15px;">Full restoration for heirlooms. Includes re-weaving, hole repair, color correction, and moth proofing.</p>
+            <div style="font-size: 0.8rem; color: var(--text-muted); border-top: 1px solid var(--border-color); padding-top: 12px;">
+              <div>Custom Quote</div>
+              <div>14-21 Day turnaround</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pickup Process Steps -->
+      <div class="scroll-reveal fade-up" style="margin-top: 60px;">
+        <div class="text-center" style="margin-bottom: 40px;">
+          <span class="section-subtitle">How It Works</span>
+          <h3 class="section-title">Concierge Pickup Process</h3>
+        </div>
+        <div class="booking-process-grid">
+          <div class="booking-process-step">
+            <div class="booking-step-circle">1</div>
+            <h4 style="font-family: var(--font-heading); font-size: 1rem; margin-bottom: 6px;">Book Online</h4>
+            <p style="font-size: 0.85rem; color: var(--text-body);">Fill out the form with your rug details and preferred pickup window.</p>
+          </div>
+          <div class="booking-process-step">
+            <div class="booking-step-circle">2</div>
+            <h4 style="font-family: var(--font-heading); font-size: 1rem; margin-bottom: 6px;">White-Glove Pickup</h4>
+            <p style="font-size: 0.85rem; color: var(--text-body);">Our team arrives in a covered vehicle with padded handling equipment.</p>
+          </div>
+          <div class="booking-process-step">
+            <div class="booking-step-circle">3</div>
+            <h4 style="font-family: var(--font-heading); font-size: 1rem; margin-bottom: 6px;">Artisan Care</h4>
+            <p style="font-size: 0.85rem; color: var(--text-body);">Your rug enters our certified restoration workflow with full audit tracking.</p>
+          </div>
+          <div class="booking-process-step">
+            <div class="booking-step-circle">4</div>
+            <h4 style="font-family: var(--font-heading); font-size: 1rem; margin-bottom: 6px;">Delivered Back</h4>
+            <p style="font-size: 0.85rem; color: var(--text-body);">Your restored rug is returned and placed exactly where you want it.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rug Journey Tracking Terminal -->
+      <div class="tracking-terminal scroll-reveal fade-up" style="margin-top: 60px;">
+        <div class="text-center" style="margin-bottom: 30px;">
+          <span class="section-subtitle">Real-Time Artisan Tracking</span>
+          <h3 class="section-title" style="margin-bottom: 12px;">Rug Restoration Terminal</h3>
+          <p class="max-w-600" style="font-size: 0.95rem; margin-left: auto; margin-right: auto;">Trace every wash cycle, warp-thread repair, and conditioning phase of your heirloom rug. Enter your tracking code below.</p>
+        </div>
+        
+        <div class="tracking-input-group">
+          <input type="text" class="form-control" id="tracking-code-input" placeholder="Enter tracking code (e.g., LUX-2026-WASH)" style="text-align: center; text-transform: uppercase;">
+          <button type="button" class="btn btn-accent" id="tracking-btn">
+            <i class="fa-solid fa-satellite-dish"></i> Locate Rug
+          </button>
+        </div>
+        
+        <div class="text-center" style="margin-top: -25px; margin-bottom: 35px;">
+          <p style="font-size: 0.8rem; color: var(--text-body);">
+            Artisan Demo Codes: 
+            <span class="demo-code-badge" id="demo-code-wash" style="cursor: pointer; background: rgba(var(--primary-blue-rgb), 0.05); padding: 4px 10px; border-radius: 4px; margin: 0 4px; font-weight: 500; color: var(--accent-gold); transition: all 0.2s;">LUX-2026-WASH</span> 
+            or 
+            <span class="demo-code-badge" id="demo-code-gold" style="cursor: pointer; background: rgba(var(--primary-blue-rgb), 0.05); padding: 4px 10px; border-radius: 4px; margin: 0 4px; font-weight: 500; color: var(--accent-gold); transition: all 0.2s;">LUX-777-GOLD</span>
+          </p>
+        </div>
+
+        <!-- Timeline Display (Hidden initially, controlled by JS) -->
+        <div id="tracking-timeline-container" style="display: none; opacity: 0; transition: opacity 0.5s ease;">
+          <div class="tracking-timeline">
+            <!-- Timeline progress line -->
+            <div class="timeline-line">
+              <div class="timeline-progress-bar" id="timeline-progress-line"></div>
+            </div>
+            
+            <!-- Nodes (Woven phases) -->
+            <div class="timeline-node" id="node-pickup">
+              <div class="node-dot"><i class="fa-solid fa-truck"></i></div>
+              <div class="node-label">Collection</div>
+            </div>
+            
+            <div class="timeline-node" id="node-inspection">
+              <div class="node-dot"><i class="fa-solid fa-magnifying-glass"></i></div>
+              <div class="node-label">Artisan Audit</div>
+            </div>
+            
+            <div class="timeline-node" id="node-wash">
+              <div class="node-dot"><i class="fa-solid fa-water"></i></div>
+              <div class="node-label">Deep Wash</div>
+            </div>
+            
+            <div class="timeline-node" id="node-repair">
+              <div class="node-dot"><i class="fa-solid fa-scissors"></i></div>
+              <div class="node-label">Re-Weaving</div>
+            </div>
+            
+            <div class="timeline-node" id="node-drying">
+              <div class="node-dot"><i class="fa-solid fa-wind"></i></div>
+              <div class="node-label">Conditioning</div>
+            </div>
+            
+            <div class="timeline-node" id="node-delivery">
+              <div class="node-dot"><i class="fa-solid fa-handshake"></i></div>
+              <div class="node-label">Handover</div>
+            </div>
+          </div>
+          
+          <!-- Detailed Phase Report Card -->
+          <div class="tracking-status-details" id="tracking-report-card">
+            <div class="status-flex-row">
+              <span>Current Status:</span>
+              <strong id="track-status-text" style="color: var(--accent-gold);">-</strong>
+            </div>
+            <div class="status-flex-row">
+              <span>Current Location:</span>
+              <strong id="track-location-text">-</strong>
+            </div>
+            <div class="status-flex-row">
+              <span>Last Milestone Complete:</span>
+              <strong id="track-milestone-text">-</strong>
+            </div>
+            <div class="status-flex-row">
+              <span>Estimated Delivery Window:</span>
+              <strong id="track-delivery-text">-</strong>
+            </div>
+          </div>
+        </div>
+
+        <div id="tracking-error-container" class="form-status-alert error" style="display: none; max-width: 550px; margin: 0 auto; background: rgba(220, 38, 38, 0.05); border: 1px solid #DC2626; color: #DC2626; border-radius: var(--border-radius-sm); padding: 15px; text-align: center;">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <div>
+            <strong>Tracking ID Not Recognized</strong>
+            <p style="margin-top: 4px; font-size: 0.85rem; color: #7F1D1D;">Please review your code structure or use one of our active active demo codes above.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Booking Confirmation Modal Overlay -->
+      <div class="confirm-overlay" id="confirm-overlay">
+        <div class="confirm-modal">
+          <div class="confirm-header">
+            <h3>Verify White-Glove Details</h3>
+          </div>
+          <div class="confirm-body">
+            <p style="margin-bottom: 20px; font-size: 0.95rem;">Please review your request details below. Once confirmed, our concierge logistics team will finalize your order.</p>
+            <div class="confirm-summary-list">
+              <div class="confirm-row">
+                <span>Client Name:</span>
+                <strong id="confirm-name">-</strong>
+              </div>
+              <div class="confirm-row">
+                <span>Contact Details:</span>
+                <strong id="confirm-contact">-</strong>
+              </div>
+              <div class="confirm-row">
+                <span>Collection Address:</span>
+                <strong id="confirm-address">-</strong>
+              </div>
+              <div class="confirm-row">
+                <span>Rug & Service Tier:</span>
+                <strong id="confirm-rug-details">-</strong>
+              </div>
+              <div class="confirm-row">
+                <span>Preferred Schedule:</span>
+                <strong id="confirm-schedule">-</strong>
+              </div>
+              <div class="confirm-row" id="confirm-price-row" style="display: none;">
+                <span>Estimated Price:</span>
+                <strong id="confirm-price" style="color: var(--accent-gold); font-size: 1.1rem;">-</strong>
+              </div>
+            </div>
+            <div class="confirm-footer-btns" style="margin-top: 25px;">
+              <button type="button" class="btn btn-outline-gold" id="confirm-edit-btn">Edit Request</button>
+              <button type="button" class="btn btn-accent" id="confirm-submit-btn">Final Confirm & Book</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shared & Custom JS Files -->
+  <script src="components.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
